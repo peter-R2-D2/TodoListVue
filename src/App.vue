@@ -18,7 +18,11 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
-* {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 :root {
@@ -59,6 +63,21 @@ body {
   font-family: "DM Sans", sans-serif;
   overflow: hidden;
 }
+input {
+  outline: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
 .app-container {
+  min-width: 480px;
+  width: 100%;
+  max-height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 25px;
+  border-radius: 25px;
+  overflow: auto;
+  color: #222;
 }
 </style>
