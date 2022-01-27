@@ -1,8 +1,14 @@
 # Todo list with Vue 3
 
+This project is a simple Todo. Perfect to learn the basics about Vue 3 and Vuex.
+
+<p align="center">
+	<img src="src/assets/todo.jpeg">
+</p>
+
 ## Technologies
 
-[X] Vitejs  
-[X] Vue 3  
-[X]Font Awesome  
-[X]Local Storage
+* Vitejs
+* Vue 3  
+* Font Awesome  
+* Local Storage
