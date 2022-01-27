@@ -2,16 +2,21 @@
   <div>
     <h1 class="app-header">Vue Todo List</h1>
 
-    <div class="add-task">
+    <form class="add-task">
       <input type="text" placeholder="Add New Task" class="task-input" />
       <input type="submit" value="+" class="submit-task" title="Add Task" />
-    </div>
+    </form>
   </div>
 </template>
 
 <script>
+import { inject } from "vue";
 export default {
-  name: "BarTodo",
+  name: "TodoForm",
+  setup() {
+    const todos = inject("todos");
+    console.log(todos.value);
+  },
 };
 </script>
 

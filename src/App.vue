@@ -1,17 +1,22 @@
 <template>
   <div class="app-container">
-    <BarTodo />
+    <TodoForm />
     <TodoApp />
   </div>
 </template>
 
 <script>
 import TodoApp from "./components/TodoApp.vue";
-import BarTodo from "./components/BarTodo.vue";
+import TodoForm from "./components/TodoForm.vue";
+import { provide, ref } from "vue";
 
 export default {
   name: "App",
-  components: { TodoApp, BarTodo },
+  components: { TodoApp, TodoForm },
+  setup() {
+    const todos = ref([]);
+    provide("todos", todos);
+  },
 };
 </script>
 
