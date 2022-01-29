@@ -1,21 +1,31 @@
 <template>
-  <div>
-    <h1 class="app-header">Vue Todo List</h1>
+  <h1 class="app-header">Vue Todo List</h1>
 
-    <form class="add-task">
-      <input type="text" placeholder="Add New Task" class="task-input" />
-      <input type="submit" value="+" class="submit-task" title="Add Task" />
-    </form>
-  </div>
+  <main class="add-task">
+    <input
+      type="text"
+      placeholder="Add New Task"
+      class="task-input"
+      v-model="newTodoInput"
+      v-on:keydown.enter="addTodo(newTodoInput)"
+    />
+    <button class="submit-task" @click="addTodo(newTodoInput)">+</button>
+  </main>
 </template>
 
 <script>
-import { inject } from "vue";
 export default {
   name: "TodoForm",
-  setup() {
-    const todos = inject("todos");
-    console.log(todos.value);
+  data() {
+    return {
+      newTodoInput: "",
+    };
+  },
+  methods: {
+    addTodo(newTodo) {
+      this.$store.commit("addTodo", newTodo);
+      this.newTodoInput = "";
+    },
   },
 };
 </script>
