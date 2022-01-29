@@ -8,15 +8,10 @@
 <script>
 import TodoApp from "./components/TodoApp.vue";
 import TodoForm from "./components/TodoForm.vue";
-import { provide, ref } from "vue";
 
 export default {
   name: "App",
   components: { TodoApp, TodoForm },
-  setup() {
-    const todos = ref([]);
-    provide("todos", todos);
-  },
 };
 </script>
 

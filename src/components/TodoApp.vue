@@ -1,10 +1,10 @@
 <template>
   <div>
     <ul class="task-list">
-      <li class="task-list-item">
+      <li class="task-list-item" v-for="todo in todos" :key="todo.id">
         <label class="task-list-item-label">
           <input type="checkbox" />
-          <span>Task</span>
+          <span>{{ todo.text }}</span>
         </label>
         <span class="delete-btn" title="Delete Task"></span>
       </li>
@@ -15,6 +15,11 @@
 <script>
 export default {
   name: "TodoApp",
+  data() {
+    return {
+      todos: this.$store.state.todos,
+    };
+  },
 };
 </script>
 
