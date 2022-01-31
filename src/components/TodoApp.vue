@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <ul class="task-list">
-      <li class="task-list-item" v-for="todo in todos" :key="todo.id">
-        <label class="task-list-item-label">
-          <input type="checkbox" />
-          <span>{{ todo.text }}</span>
-        </label>
-        <span class="delete-btn" title="Delete Task"></span>
-      </li>
-    </ul>
-  </div>
+  <ul class="task-list">
+    <li class="task-list-item" v-for="todo of todos" :key="todo.id">
+      <label class="task-list-item-label">
+        <input type="checkbox" />
+        <span>{{ todo.text }}</span>
+      </label>
+      <span class="delete-btn" title="Delete Task"></span>
+    </li>
+  </ul>
 </template>
 
 <script>
+import { computed } from "vue";
+import { useStore } from "vuex";
 export default {
   name: "TodoApp",
-  data() {
+  setup() {
+    const store = useStore();
+
+    const todos = computed(() => store.state.todos);
+
     return {
-      todos: this.$store.state.todos,
+      todos,
     };
   },
 };

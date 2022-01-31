@@ -9,6 +9,7 @@ const store = createStore({
   mutations: {
     addTodo: function (state, todoText) {
       state.todos.push({
+        id: Date.now(),
         text: todoText,
         done: false
       })

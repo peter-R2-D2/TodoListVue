@@ -1,31 +1,38 @@
 <template>
-  <h1 class="app-header">Vue Todo List</h1>
+  <h1 class="app-header">Todo List</h1>
 
   <main class="add-task">
     <input
       type="text"
       placeholder="Add New Task"
       class="task-input"
-      v-model="newTodoInput"
-      v-on:keydown.enter="addTodo(newTodoInput)"
+      v-on:keypress.enter="addTodo"
     />
-    <button class="submit-task" @click="addTodo(newTodoInput)">+</button>
+    <button class="submit-task" @click="addTodo">+</button>
   </main>
 </template>
 
 <script>
+import { useStore } from "vuex";
+import { ref } from "vue";
+
 export default {
   name: "TodoForm",
-  data() {
+  setup() {
+    const store = useStore();
+
+    const newTodoInput = ref("");
+
+    function addTodo(e) {
+      const text = e.target.value;
+      store.commit("addTodo", text);
+      e.target.value = "";
+    }
+
     return {
-      newTodoInput: "",
+      addTodo,
+      newTodoInput,
     };
-  },
-  methods: {
-    addTodo(newTodo) {
-      this.$store.commit("addTodo", newTodo);
-      this.newTodoInput = "";
-    },
   },
 };
 </script>
