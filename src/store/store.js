@@ -13,6 +13,17 @@ const store = createStore({
         text: todoText,
         done: false
       })
+    },
+    deleteTodo: function (state, id) {
+      state.todos = state.todos.filter(item => item.id !== id)
+    },
+    updateTodo: function (state, id) {
+      state.todos = state.todos.map(item => {
+        if (item.id === id) {
+          item.done = true
+        }
+        return item
+      })
     }
   },
   actions: {
