@@ -14,14 +14,11 @@
 
 <script>
 import { useStore } from "vuex";
-import { ref } from "vue";
 
 export default {
   name: "TodoForm",
   setup() {
     const store = useStore();
-
-    const newTodoInput = ref("");
 
     function addTodo(e) {
       const text = e.target.value;
@@ -31,7 +28,6 @@ export default {
 
     return {
       addTodo,
-      newTodoInput,
     };
   },
 };
