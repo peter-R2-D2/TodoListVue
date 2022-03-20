@@ -8,7 +8,6 @@
       placeholder="Add New Task"
       v-model="todoText"
       class="task-input"
-      v-on:keypress.enter="addTodo"
     />
     <button v-if="todoText !== ''" class="submit-task" @click="addTodo">
       <font-icon icon='plus' />
