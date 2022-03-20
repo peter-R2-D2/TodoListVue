@@ -5,24 +5,24 @@
 </template>
 
 <script>
-import { computed } from "vue";
-import { useStore } from "vuex";
-import TodoItem from "./TodoItem.vue";
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import TodoItem from './TodoItem.vue'
 export default {
-  name: "TodoApp",
+  name: 'TodoApp',
   components: {
-    TodoItem,
+    TodoItem
   },
-  setup() {
-    const store = useStore();
+  setup () {
+    const store = useStore()
 
-    const todos = computed(() => store.state.todos);
+    const todos = computed(() => store.state.todos)
 
     return {
-      todos,
-    };
-  },
-};
+      todos
+    }
+  }
+}
 </script>
 
 <style>

@@ -1,36 +1,46 @@
 <template>
+<div>
   <h1 class="app-header">Todo List</h1>
 
   <main class="add-task">
     <input
       type="text"
       placeholder="Add New Task"
+      v-model="todoText"
       class="task-input"
       v-on:keypress.enter="addTodo"
     />
-    <button class="submit-task" @click="addTodo">+</button>
+    <button v-if="todoText !== ''" class="submit-task" @click="addTodo">
+      <font-icon icon='plus' />
+    </button>
+    <button v-else class="submit-task">
+      <font-icon icon="plus" />
+    </button>
   </main>
+</div>
 </template>
 
 <script>
-import { useStore } from "vuex";
+import { ref } from '@vue/reactivity'
+import { useStore } from 'vuex'
 
 export default {
-  name: "TodoForm",
-  setup() {
-    const store = useStore();
+  name: 'TodoForm',
+  setup () {
+    const store = useStore()
+    const todoText = ref('') // almacena lo del input
 
-    function addTodo(e) {
-      const text = e.target.value;
-      store.commit("addTodo", text);
-      e.target.value = "";
+    function addTodo (e) {
+      store.commit('addTodo', this.todoText)
+      this.todoText = ''
     }
 
     return {
-      addTodo,
-    };
-  },
-};
+      todoText,
+      addTodo
+    }
+  }
+}
 </script>
 
 <style>

@@ -1,10 +1,10 @@
-import {createStore} from "vuex";
+import { createStore } from 'vuex'
 
 // Create a new store instance
 const store = createStore({
   state: {
     count: 0,
-    todos: [], // Array todos
+    todos: [] // Array todos
   },
   mutations: {
     addTodo: function (state, todoText) {

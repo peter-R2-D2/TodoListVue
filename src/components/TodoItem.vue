@@ -13,32 +13,32 @@
 </template>
 
 <script>
-import { computed } from "vue";
-import { useStore } from "vuex";
+import { computed } from 'vue'
+import { useStore } from 'vuex'
 export default {
-  name: "TodoItem",
+  name: 'TodoItem',
   props: {
     todo: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
-  setup() {
-    const store = useStore();
+  setup () {
+    const store = useStore()
 
-    const todos = computed(() => store.state.todos);
+    const todos = computed(() => store.state.todos)
 
     const updateTodo = (id) => {
-      store.commit("updateTodo", id);
-    };
+      store.commit('updateTodo', id)
+    }
 
     const deleteTodo = (id) => {
-      store.commit("deleteTodo", id);
-    };
+      store.commit('deleteTodo', id)
+    }
 
-    return { todos, updateTodo, deleteTodo };
-  },
-};
+    return { todos, updateTodo, deleteTodo }
+  }
+}
 </script>
 
 <style>
