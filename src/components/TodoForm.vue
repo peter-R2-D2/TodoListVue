@@ -1,8 +1,13 @@
 <template>
-<div>
-  <h1 class="app-header">Todo List</h1>
+<div class="w-full mx-3 py-4 px-4 shadow dark:bg-indigo-600 rounded-md">
+  <div class="flex justify-between mb-3">
+    <h1 class="text-lg font-bold dark:text-white">¿Qué pasa?, name</h1>
+    <div>
+      <font-icon icon="moon" class="text-white" />
+    </div>
+  </div>
 
-  <main class="add-task">
+  <main class="flex">
     <input
       type="text"
       placeholder="Add New Task"
@@ -10,7 +15,7 @@
       class="task-input"
     />
     <button v-if="todoText !== ''" class="submit-task" @click="addTodo">
-      <font-icon icon='plus' />
+      <font-icon icon='plus' class="text-white" />
     </button>
     <button v-else class="submit-task">
       <font-icon icon="plus" />

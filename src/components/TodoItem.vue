@@ -1,14 +1,22 @@
 <template>
-  <li class="task-list-item">
+  <li class="flex justify-between items-center rounded-md dark:bg-indigo-600 py-3 px-2">
     <label class="task-list-item-label">
       <span
+        class="dark:text-white"
         :class="{ 'task-list-item-done': todo.done }"
         @click="updateTodo(todo.id)"
       >
         {{ todo.text }}</span
       >
     </label>
-    <span class="delete-btn" @click="deleteTodo(todo.id)"></span>
+    <div>
+      <span class="cursor-pointer mr-2">
+        <font-icon icon="pen-to-square" class="dark:text-white" />
+      </span>
+      <span @click="deleteTodo(todo.id)" class="cursor-pointer">
+        <font-icon icon="trash-can" class="dark:text-red-600" />
+      </span>
+    </div>
   </li>
 </template>
 

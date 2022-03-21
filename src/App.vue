@@ -1,18 +1,18 @@
 <template>
-  <div class="app-container">
+  <div class="container bg-white dark:bg-indigo-900 px-3 pt-3">
     <TodoForm />
     <TodoApp />
   </div>
 </template>
 
 <script>
-import TodoApp from "./components/TodoApp.vue";
-import TodoForm from "./components/TodoForm.vue";
+import TodoApp from './components/TodoApp.vue'
+import TodoForm from './components/TodoForm.vue'
 
 export default {
-  name: "App",
-  components: { TodoApp, TodoForm },
-};
+  name: 'App',
+  components: { TodoApp, TodoForm }
+}
 </script>
 
 <style>
@@ -25,59 +25,12 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  --checkbox-color: rgb(202, 60, 60);
-  --checkbox-shadow: rgba(238, 156, 167, 0.2);
-  --add-button: rgba(255, 255, 255, 0.7);
-  --add-button-shadow: rgba(238, 156, 167, 0.4);
-}
-body {
-  width: 100%;
+.container{
   height: 100vh;
-  margin: 0;
-  padding: 15px;
   display: flex;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(
-      62deg,
-      rgba(7, 86, 160, 0.973) 13%,
-      rgba(255, 122, 151, 0.5) 4%
-    ),
-    linear-gradient(
-      44deg,
-      rgba(0, 43, 99, 0.079) 39%,
-      rgba(242, 140, 143, 0.5) 18%
-    ),
-    linear-gradient(
-      118deg,
-      rgba(84, 202, 242, 0.031) 40%,
-      rgba(247, 155, 187, 0.5) 54%
-    ),
-    linear-gradient(
-      58deg,
-      rgba(90, 90, 237, 0.161) 83%,
-      rgba(249, 156, 142, 0.5) 23%
-    );
-  background-blend-mode: normal, lighten, multiply, hard-light;
-  font-family: "DM Sans", sans-serif;
-  overflow: hidden;
 }
-input {
-  outline: none;
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-.app-container {
-  min-width: 480px;
-  width: 100%;
-  max-height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding: 25px;
-  border-radius: 25px;
-  overflow: auto;
-  color: #222;
-}
+
 </style>
