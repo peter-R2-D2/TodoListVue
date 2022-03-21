@@ -1,5 +1,5 @@
 <template>
-  <div class="container bg-white dark:bg-indigo-900 px-3 pt-3">
+  <div class="container-bg bg-teal-300 dark:bg-indigo-900 px-3 pt-3">
     <TodoForm />
     <TodoApp />
   </div>
@@ -25,11 +25,10 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-.container{
+.container-bg{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
 }
 

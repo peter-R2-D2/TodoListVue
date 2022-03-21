@@ -1,27 +1,27 @@
 <template>
-<div class="w-full mx-3 py-4 px-4 shadow dark:bg-indigo-600 rounded-md">
-  <div class="flex justify-between mb-3">
-    <h1 class="text-lg font-bold dark:text-white">¿Qué pasa?, name</h1>
-    <div>
-      <font-icon icon="moon" class="text-white" />
+  <div class="w-full mx-3 py-4 px-4 shadow-lg bg-teal-500 dark:bg-indigo-600 rounded-md">
+    <div class="flex justify-between mb-3">
+      <h1 class="text-lg font-bold dark:text-white text-white">¿Qué pasa?, name</h1>
+      <div>
+        <font-icon icon="moon" class="text-white" />
+      </div>
     </div>
-  </div>
 
-  <main class="flex">
-    <input
-      type="text"
-      placeholder="Add New Task"
-      v-model="todoText"
-      class="task-input"
-    />
-    <button v-if="todoText !== ''" class="submit-task" @click="addTodo">
-      <font-icon icon='plus' class="text-white" />
-    </button>
-    <button v-else class="submit-task">
-      <font-icon icon="plus" />
-    </button>
-  </main>
-</div>
+    <main class="flex">
+      <input
+        type="text"
+        placeholder="Add New Task"
+        v-model="todoText"
+        class="task-input dark:text-white"
+      />
+      <button v-if="todoText !== ''" class="submit-task" @click="addTodo">
+        <font-icon icon="plus" class="text-white" />
+      </button>
+      <button v-else class="submit-task">
+        <font-icon icon="plus" />
+      </button>
+    </main>
+  </div>
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
   name: 'TodoForm',
   setup () {
     const store = useStore()
-    const todoText = ref('') // almacena lo del input
+    const todoText = ref('') // store the input
 
     function addTodo (e) {
       store.commit('addTodo', this.todoText)

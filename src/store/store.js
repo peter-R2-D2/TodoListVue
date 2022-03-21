@@ -4,9 +4,13 @@ import { createStore } from 'vuex'
 const store = createStore({
   state: {
     count: 0,
-    todos: [] // Array todos
+    todos: [], // Array todos
+    showModalDelete: false
   },
   mutations: {
+    setStoreKey (state, { key, value }) {
+      state[key] = value
+    },
     addTodo: function (state, todoText) {
       state.todos.push({
         id: Date.now(),
