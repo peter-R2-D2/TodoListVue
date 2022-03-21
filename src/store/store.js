@@ -5,6 +5,7 @@ const store = createStore({
   state: {
     count: 0,
     todos: [], // Array todos
+    editableTodo: null,
     showModalDelete: false
   },
   mutations: {

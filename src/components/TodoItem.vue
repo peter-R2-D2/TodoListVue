@@ -13,7 +13,7 @@
       <span class="cursor-pointer mr-2">
         <font-icon icon="pen-to-square" class="dark:text-white text-white" />
       </span>
-      <span @click="deleteTodo(todo.id)" class="cursor-pointer">
+      <span @click="deleteTodo(todo)" class="cursor-pointer">
         <font-icon icon="trash-can" class="dark:text-red-600 text-red-600" />
       </span>
     </div>
@@ -44,11 +44,14 @@ export default {
       store.commit('updateTodo', id)
     }
 
-    const deleteTodo = (id) => {
-      // store.commit('deleteTodo', id)
+    const deleteTodo = (todo) => {
       store.commit('setStoreKey', {
         key: 'showModalDelete',
         value: true
+      })
+      store.commit('setStoreKey', {
+        key: 'editableTodo',
+        value: todo
       })
     }
 
