@@ -3,9 +3,8 @@ import { createStore } from 'vuex'
 // Create a new store instance
 const store = createStore({
   state: {
-    count: 0,
     todos: [], // Array todos
-    editableTodo: null,
+    editableTodo: null, // todo edit
     showModalDelete: false
   },
   mutations: {

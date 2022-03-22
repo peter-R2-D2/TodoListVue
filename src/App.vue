@@ -1,17 +1,16 @@
 <template>
-  <div class="container-bg bg-teal-300 dark:bg-indigo-900 px-3 pt-3">
-    <TodoForm />
-    <TodoApp />
+  <div class="h-screen bg-teal-300 dark:bg-indigo-900 px-3 pt-3">
+    <TodoNavbar />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import TodoApp from './components/TodoApp.vue'
-import TodoForm from './components/TodoForm.vue'
+import TodoNavbar from './components/navbar/TodoNavbar.vue'
 
 export default {
   name: 'App',
-  components: { TodoApp, TodoForm }
+  components: { TodoNavbar }
 }
 </script>
 
@@ -25,11 +24,4 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-.container-bg{
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 </style>
