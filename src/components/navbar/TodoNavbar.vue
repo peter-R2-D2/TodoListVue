@@ -5,12 +5,25 @@
     </div>
     <nav>
       <font-icon icon="bars" class="dark:text-white text-2xl" />
+      <button @click="logout" class="ml-3">
+        <font-icon icon="right-to-bracket" class="dark:text-white text-2xl" />
+      </button>
     </nav>
   </div>
 </template>
 
 <script>
+import { useStore } from 'vuex'
+
 export default {
+  setup () {
+    const store = useStore()
+    const logout = () => {
+      store.dispatch('logout')
+    }
+
+    return { logout }
+  }
 
 }
 </script>

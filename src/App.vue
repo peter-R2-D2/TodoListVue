@@ -1,16 +1,26 @@
 <template>
   <div class="h-screen bg-teal-300 dark:bg-indigo-900 px-3 pt-3">
-    <TodoNavbar />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import TodoNavbar from './components/navbar/TodoNavbar.vue'
+import { onBeforeMount } from '@vue/runtime-core'
+import { useStore } from 'vuex'
 
 export default {
   name: 'App',
-  components: { TodoNavbar }
+  setup () {
+    const store = useStore()
+
+    onBeforeMount(() => {
+      store.dispatch('fetchUser')
+    })
+
+    return {
+      user: store.state.user
+    }
+  }
 }
 </script>
 
