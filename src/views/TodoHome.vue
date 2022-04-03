@@ -1,11 +1,9 @@
 <template>
-  <main>
+  <div class="container-bg">
     <TodoNavbar />
-    <div class="container-bg">
-      <TodoForm />
-      <TodoApp />
+    <TodoForm />
+    <TodoApp />
     </div>
-  </main>
 </template>
 
 <script>

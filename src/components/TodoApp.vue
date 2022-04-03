@@ -1,5 +1,5 @@
 <template>
-  <ul class="w-full mt-5">
+  <ul class="w-full flex flex-col items-center mt-5">
     <TodoItem v-for="todo of todos" :key="todo.id" :todo="todo" />
   </ul>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <li class="flex justify-between items-center rounded-md bg-teal-500 dark:bg-indigo-600 py-3 px-2 mb-3">
+  <li class="w-full md:w-2/3 flex justify-between items-center rounded-md bg-teal-500 dark:bg-indigo-600 py-3 px-2 mb-3">
     <label class="task-list-item-label">
       <span
         class="dark:text-white text-white"

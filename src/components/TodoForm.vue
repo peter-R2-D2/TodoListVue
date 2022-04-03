@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mx-3 py-4 px-4 shadow-lg bg-teal-500 dark:bg-indigo-600 rounded-md">
+  <div class="w-full md:w-2/3 mx-3 py-4 px-4 shadow-lg bg-teal-500 dark:bg-indigo-600 rounded-md">
     <div class="flex justify-between mb-3">
       <h1 class="text-lg font-bold dark:text-white text-white">¿Qué pasa?</h1>
     </div>
